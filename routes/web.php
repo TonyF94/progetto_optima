@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
 
-Route::get('/', function () {
-    return view('welcome');
+// gruppo publicController
+Route::controller(PublicController::class)->group(function () {
+    // view homepage del sito web
+    Route::get('/', 'index')->name('homepage');
 });
